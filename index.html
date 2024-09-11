@@ -28,7 +28,10 @@
 
       new daum.Postcode({
           oncomplete: function(data) {
-              callbackMessage(data);
+              window.flutter_inappwebview.callHandler('myHandler', 'Hello from JavaScript').then(function(response) {
+              console.log(response);
+            });
+            //callbackMessage(data);
           },
           width : '100%',
           height : '100%',
