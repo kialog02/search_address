@@ -28,8 +28,7 @@
 
       new daum.Postcode({
           oncomplete: function(data) {
-              alert('oncomplete');
-
+              callbackMessage(data);
           },
           width : '100%',
           height : '100%',
