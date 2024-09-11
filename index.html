@@ -26,12 +26,15 @@
         try { onComplete.postMessage(message); } catch(err) {}
       }
 
+      function callbackMessage2(message) {
+          try { 
+              window.flutter_inappwebview.callHandler('messageHandler', message);
+          } catch(err) {}
+      }
+        
       new daum.Postcode({
           oncomplete: function(data) {
-              window.flutter_inappwebview.callHandler('myHandler', 'Hello from JavaScript').then(function(response) {
-              console.log(response);
-            });
-            //callbackMessage(data);
+            callbackMessage2(data);
           },
           width : '100%',
           height : '100%',
